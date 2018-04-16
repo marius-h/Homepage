@@ -7,71 +7,40 @@
         app
       >
         <v-list>
-          <v-list-tile
-            v-for="item in menuItems"
-            :key="item.title"
-            router
-            :to="item.link"
-          >
+          <v-list-tile>
             <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
+              <v-icon>perm_contact_calendar</v-icon>
             </v-list-tile-action>
-            <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+            <v-list-tile-content>
+              <v-btn flat>News</v-btn>
+            </v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
 
       <v-toolbar dark color="primary">
-        <v-toolbar-side-icon @click="sideNav = !sideNav" class="hidden-sm-and-up"></v-toolbar-side-icon>
         <v-toolbar-title>
           <router-link to="/" tag="span" style="cursor: pointer">
             <v-icon>home</v-icon>
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn
-            flat
-            color="white--text"
-            dark
-            slot="activator"
-            v-bind:v-click="languageSlider = !languageSlider"
-          >Sprache ändern</v-btn>
-          <v-menu bottom offset-y :close-on-content-click='true'>
-
-            <v-list light="true">
-              <v-list-tile v-for="(item, i) in language" :key="i" v-model="languageSlider" @click="">
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
+        <v-toolbar-items class="hidden-xs-only">
+          <v-btn flat>
+            <v-icon dark left>language</v-icon>
+            language
+          </v-btn>
+          <v-btn flat router
+                 to="news"> <v-icon dark left>perm_contact_calendar</v-icon>News</v-btn>
         </v-toolbar-items>
-        <!--v-toolbar-items class="hidden-xs-only">
-          <v-menu
-            bottom
-            left
-          >
-            <v-btn
-              flat
-              @click="languageSlider = !languageSlider"
-              v-lang.change_lang
-              slot="activator"
-            >Dropdown
-            </v-btn>
 
-            <v-list>
-              <v-list-tile
-                icon
-                v-for="(item, i) in language"
-                :key="i"
-                @click=""
-              >
-                <v-icon>{{ item.icon }}</v-icon>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile>
-            </v-list>
-          </v-menu>
-        </v-toolbar-items-->
+        <v-toolbar-items class="hidden-sm-and-up">
+          <v-btn icon flat>
+            <v-icon dark left>language</v-icon>
+          </v-btn>
+          <v-btn icon flat router
+                 to="news"> <v-icon dark left>perm_contact_calendar</v-icon> </v-btn>
+        </v-toolbar-items>
       </v-toolbar>
 
       <main>
