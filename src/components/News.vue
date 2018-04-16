@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <v-app>
-    </v-app>
-  </div>
+
 </template>
+
+<script>
+    export default {
+        name: "News"
+    }
+</script>
+
+<style scoped>
+
+</style>
