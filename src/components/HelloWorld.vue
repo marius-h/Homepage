@@ -2,8 +2,6 @@
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
-        <img src="@/assets/logo.gif" alt="Vuetify.js" class="mb-5">
-
 
         <blockquote>
           &#8220;32GB RAM und ein Ultrawide sind wichtig für Webdevelopment.&#8221;

@@ -46,12 +46,14 @@ Vue.use(MultiLanguage, {
   en: {
     news: 'News',
     welcome: 'Welcome, {name}',
-    contact_us: 'About Us'
+    contact_us: 'About Us',
+    change_lang: 'Change language'
   },
   de: {
     news: 'Neuigkeiten',
     welcome: 'Hallo, {name}',
-    contact_us: 'Impressum'
+    contact_us: 'Impressum',
+    change_lang: 'Sprache auswählen'
   }
 })
 
