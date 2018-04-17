@@ -34,7 +34,7 @@
               flat
               slot="activator"
               style="min-width: 64px">
-              <img :src="`https://countryflags.io/us/flat/24.png`" height="24" width="24"/>
+              <img style="margin-right: 12px" :src="`https://countryflags.io/us/flat/24.png`" height="24" width="24"/>
               language
             </v-btn>
             <v-list>
