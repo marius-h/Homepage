@@ -1,40 +1,37 @@
 <template>
-  <v-container>
-    <v-layout row wrap>
-      <v-flex xs12 sm6 class="text-xs-center text-sm-right">
-        <v-btn large router to="/news" class="info">Neuigkeiten</v-btn>
-      </v-flex>
-      <v-carousel>
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :src="item.src"
-            :key="i"
-          >
-          </v-carousel-item>
-        </v-carousel>
-    </v-layout>
-    <v-layout row wrap>
-      <v-flex xs12>
-        <v-carousel>
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :src="item.src"
-            :key="i"
-          >
-          </v-carousel-item>
-        </v-carousel>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <section>
+    <v-carousel
+      hide-controls="true"
+      hide-delimiters="true"
+      light="true"
+    >
+      <v-carousel-item
+        v-for="(item, i) in items"
+        :src="item.src"
+        :key="i"
+      >
+      </v-carousel-item>
+    </v-carousel>
+  </section>
+  <section>
+    <p>Test</p>
+  </section>
+
+
 </template>
 
 <script>
   export default {
-    name: "Home",
+    name: 'Home',
     data () {
       return {
         items: [
-          { src: 'https://commons.wikimedia.org/wiki/Paris#/media/File:Paris_Night.jpg' }
+          {
+            src: '../static/squirrel.jpg'
+          },
+          {
+            src: 'https://commons.wikimedia.org/wiki/Paris#/media/File:Paris_Night.jpg'
+          }
         ]
       }
     }

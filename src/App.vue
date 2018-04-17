@@ -31,7 +31,10 @@
             language
           </v-btn>
           <v-btn flat router
-                 to="news"> <v-icon dark left>perm_contact_calendar</v-icon>News</v-btn>
+                 to="news">
+            <v-icon dark left>perm_contact_calendar</v-icon>
+            News
+          </v-btn>
         </v-toolbar-items>
 
         <v-toolbar-items class="hidden-sm-and-up">
@@ -39,7 +42,9 @@
             <v-icon dark left>language</v-icon>
           </v-btn>
           <v-btn icon flat router
-                 to="news"> <v-icon dark left>perm_contact_calendar</v-icon> </v-btn>
+                 to="news">
+            <v-icon dark left>perm_contact_calendar</v-icon>
+          </v-btn>
         </v-toolbar-items>
       </v-toolbar>
 
