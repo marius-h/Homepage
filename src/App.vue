@@ -25,27 +25,46 @@
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-xs-only">
-          <v-btn flat>
-            <v-icon dark left>language</v-icon>
-            language
-          </v-btn>
-          <v-btn flat router
-                 to="news">
+
+        <!-- class="hidden-xs-only" -->
+        <v-toolbar-items>
+
+          <v-menu offset-y>
+            <v-btn
+              flat
+              slot="activator"
+              style="min-width: 64px">
+              <img :src="`https://countryflags.io/us/flat/24.png`" height="24" width="24"/>
+              language
+            </v-btn>
+            <v-list>
+              <v-list-tile v-for="item in language" :key="item.title" @click="">
+
+                <v-list-tile-avatar tile size="24px" >
+                  <img
+                  :src="`https://countryflags.io/${item.icon}/flat/24.png`"
+                  width="24px">
+                </v-list-tile-avatar>
+
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile>
+            </v-list>
+          </v-menu>
+
+           <!--menu + vclick-->
+          <v-btn
+            flat
+            router
+            to="news"
+          >
             <v-icon dark left>perm_contact_calendar</v-icon>
             News
           </v-btn>
         </v-toolbar-items>
-
+        <!--
         <v-toolbar-items class="hidden-sm-and-up">
-          <v-btn icon flat>
-            <v-icon dark left>language</v-icon>
-          </v-btn>
-          <v-btn icon flat router
-                 to="news">
-            <v-icon dark left>perm_contact_calendar</v-icon>
-          </v-btn>
         </v-toolbar-items>
+        -->
       </v-toolbar>
 
       <main>
@@ -70,22 +89,36 @@
         languageSlider: false,
         sideNav: false,
         menuItems: [
-          {icon: 'perm_contact_calendar', title: 'Deutsch'},
-          {icon: 'perm_contact_calendar', title: 'English'},
-          {icon: 'perm_contact_calendar', title: 'Español'},
-          {icon: 'perm_contact_calendar', title: 'Русский'}
+          {icon: 'us', title: 'Deutsch'},
+          {icon: 'de', title: 'English'},
+          {icon: 'es', title: 'Español'},
+          {icon: 'pl', title: 'Русский'}
         ],
         language: [
-          {icon: 'perm_contact_calendar', title: 'Deutsch'},
-          {icon: 'perm_contact_calendar', title: 'English'},
-          {icon: 'perm_contact_calendar', title: 'Español'},
-          {icon: 'perm_contact_calendar', title: 'Русский'}
+          {icon: 'de', title: 'Deutsch'},
+          {icon: 'us', title: 'English'},
+          {icon: 'es', title: 'Español'},
+          {icon: 'pl', title: 'Русский'}
         ]
       }
     }
   }
 </script>
 
+<style lang="stylus">
+  #app-toolbar
+    .toolbar__title
+      margin-left .5em
+      font-weight 300
+      font-size 21px
+      position relative
+      top 1px
+    .toolbar__items
+      .btn
+        text-transform capitalize
+        font-size 16px
+        font-weight 300
+</style>
 
 <style scoped>
   h1, h2 {
@@ -113,8 +146,8 @@
     margin: 0 10px;
   }
 
-  a {
-    color: #42b983;
-  }
+
+
+
 </style>
 
