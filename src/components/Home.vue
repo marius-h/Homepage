@@ -1,15 +1,17 @@
 <template>
   <section>
     <v-carousel
-      hide-controls="true"
-      hide-delimiters="true"
-      light="true"
+      hide-controls=true
+      hide-delimiters=true
+      light=true
     >
       <v-carousel-item
         v-for="(item, i) in items"
-        :src="item.src"
         :key="i"
       >
+          <img
+            :src="'../static/screenshotApp1.png'"
+            style="-webkit-filter: blur(3px)" width="2000"/>
       </v-carousel-item>
     </v-carousel>
   </section>
@@ -24,10 +26,7 @@
       return {
         items: [
           {
-            src: '../static/squirrel.jpg'
-          },
-          {
-            src: 'https://commons.wikimedia.org/wiki/Paris#/media/File:Paris_Night.jpg'
+            src: '../static/screenshotApp1.png'
           }
         ]
       }
