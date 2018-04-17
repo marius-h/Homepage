@@ -65,7 +65,7 @@
         <v-spacer></v-spacer>
         <v-btn flat v-lang.contact_us></v-btn>
         <h3>|</h3>
-        <v-btn flat v-lang.news .news></v-btn>
+        <v-btn flat v-lang.news></v-btn>
       </v-footer>
     </v-app>
   </div>
