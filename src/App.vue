@@ -20,8 +20,10 @@
 
       <v-toolbar dark color="primary">
         <v-toolbar-title>
+
           <router-link to="/" tag="span" style="cursor: pointer">
-            <v-icon>home</v-icon>
+            <!--v-icon>home</v-icon-->
+            <img style="margin-top: 10px" src="@/assets/logopunkt.png" height="50"/>
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
@@ -34,11 +36,11 @@
               flat
               slot="activator"
               style="min-width: 64px">
-              <img style="margin-right: 12px" :src="`https://countryflags.io/us/flat/24.png`" height="24" width="24"/>
+              <img style="margin-right: 12px" src="https://countryflags.io/de/flat/24.png" height="24" width="24"/>
 
             </v-btn>
             <v-list>
-              <v-list-tile v-for="item in language" :key="item.title" @click="">
+              <v-list-tile v-for="item in language" :key="item.icon" @click="">
 
                 <v-list-tile-avatar tile size="24px" >
                   <img
@@ -51,20 +53,8 @@
             </v-list>
           </v-menu>
 
-           <!--menu + vclick-->
-          <v-btn
-            flat
-            router
-            to="news"
-          >
-            <v-icon dark left>perm_contact_calendar</v-icon>
-            News
-          </v-btn>
+
         </v-toolbar-items>
-        <!--
-        <v-toolbar-items class="hidden-sm-and-up">
-        </v-toolbar-items>
-        -->
       </v-toolbar>
 
       <main>
@@ -88,12 +78,6 @@
       return {
         languageSlider: false,
         sideNav: false,
-        menuItems: [
-          {icon: 'us', title: 'Deutsch'},
-          {icon: 'de', title: 'English'},
-          {icon: 'es', title: 'Español'},
-          {icon: 'pl', title: 'Русский'}
-        ],
         language: [
           {icon: 'de', title: 'Deutsch'},
           {icon: 'us', title: 'English'},
