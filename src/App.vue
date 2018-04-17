@@ -40,7 +40,7 @@
             <v-list>
               <v-list-tile v-for="item in language" :key="item.title" @click="">
 
-                <v-list-tile-avatar size="24px" >
+                <v-list-tile-avatar tile size="24px" >
                   <img
                   :src="`https://countryflags.io/${item.icon}/flat/24.png`"
                   width="24px">
