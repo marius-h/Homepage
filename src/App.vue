@@ -23,7 +23,7 @@
 
           <router-link to="/" tag="span" style="cursor: pointer">
             <!--v-icon>home</v-icon-->
-            <img style="margin-top: 10px" src="@/assets/logopunkt.png" height="50"/>
+            <img style="margin-top: 10px" src="/static/logo_small_white.svg" height="50"/>
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
@@ -36,15 +36,15 @@
               flat
               slot="activator"
               style="min-width: 64px">
-              <img style="margin-right: 12px" src="https://countryflags.io/de/flat/24.png" height="24" width="24"/>
+              <img style="margin-right: 12px" src="https://countryflags.io/de/flat/32.png" width="32"/>
 
             </v-btn>
             <v-list>
               <v-list-tile v-for="item in language" :key="item.icon" @click="">
 
-                <v-list-tile-avatar tile size="24px" >
+                <v-list-tile-avatar tile size="32" >
                   <img
-                  :src="`https://countryflags.io/${item.icon}/flat/24.png`"
+                  :src="`https://countryflags.io/${item.icon}/flat/32.png`"
                   width="24px">
                 </v-list-tile-avatar>
 
@@ -60,8 +60,8 @@
       <main>
         <router-view></router-view>
       </main>
-      <v-footer dark class="primary" fixed app>
-        <span>&copy; 2018 by einfachpunkt</span>
+      <v-footer dark class="primary" app fixed=false>
+        <span class="white--text">&copy; 2018 by EinfachPunkt</span>
         <v-spacer></v-spacer>
         <v-btn flat>this.heelp</v-btn>
         <h3>|</h3>
@@ -83,7 +83,7 @@
           {icon: 'de', title: 'Deutsch'},
           {icon: 'us', title: 'English'},
           {icon: 'es', title: 'Español'},
-          {icon: 'pl', title: 'Русский'}
+          {icon: 'ru', title: 'Русский'}
         ]
       }
     }

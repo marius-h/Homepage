@@ -3,8 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import i18n from 'voo-i18n'
-import translations from '../i18n/map.js'
 import {
   Vuetify,
   VApp,
@@ -18,7 +16,8 @@ import {
   transitions,
   VMenu,
   VAvatar,
-  VCarousel
+  VCarousel,
+  VParallax
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
@@ -35,7 +34,8 @@ Vue.use(Vuetify, {
     transitions,
     VMenu,
     VAvatar,
-    VCarousel
+    VCarousel,
+    VParallax
   },
   theme: {
     primary: '#0D47A1',
@@ -47,8 +47,6 @@ Vue.use(Vuetify, {
     warning: '#FFC107'
   }
 })
-
-Vue.use(i18n, translations)
 
 Vue.config.productionTip = false
 
