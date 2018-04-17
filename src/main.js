@@ -1,9 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import MultiLanguage from 'vue-multilanguage'
 import App from './App'
 import router from './router'
+import i18n from 'voo-i18n'
+import translations from '../i18n/map.js'
 import {
   Vuetify,
   VApp,
@@ -47,21 +48,7 @@ Vue.use(Vuetify, {
   }
 })
 
-Vue.use(MultiLanguage, {
-  default: 'de',
-  en: {
-    news: 'News',
-    welcome: 'Welcome, {name}',
-    contact_us: 'About Us',
-    change_lang: 'Change language'
-  },
-  de: {
-    news: 'Neuigkeiten',
-    welcome: 'Hallo, {name}',
-    contact_us: 'Impressum',
-    change_lang: 'Sprache auswählen'
-  }
-})
+Vue.use(i18n, translations)
 
 Vue.config.productionTip = false
 
