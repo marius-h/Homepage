@@ -16,7 +16,8 @@ import {
   VToolbar,
   transitions,
   VMenu,
-  VAvatar
+  VAvatar,
+  VCarousel
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 
@@ -32,7 +33,8 @@ Vue.use(Vuetify, {
     VToolbar,
     transitions,
     VMenu,
-    VAvatar
+    VAvatar,
+    VCarousel
   },
   theme: {
     primary: '#0D47A1',

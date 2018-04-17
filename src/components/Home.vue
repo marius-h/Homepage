@@ -13,9 +13,6 @@
       </v-carousel-item>
     </v-carousel>
   </section>
-  <section>
-    <p>Test</p>
-  </section>
 
 
 </template>
