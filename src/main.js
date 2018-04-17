@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import MultiLanguage from 'vue-multilanguage'
+import language from '../lang/language'
 import {
   Vuetify,
   VApp,
@@ -48,6 +50,7 @@ Vue.use(Vuetify, {
   }
 })
 
+Vue.use(MultiLanguage, language)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

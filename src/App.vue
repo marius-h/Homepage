@@ -63,9 +63,10 @@
       <v-footer dark class="primary" app fixed=false>
         <span class="white--text">&copy; 2018 by EinfachPunkt</span>
         <v-spacer></v-spacer>
-        <v-btn flat>this.heelp</v-btn>
+        <v-btn flat v-lang.title>
+        </v-btn>
         <h3>|</h3>
-        <v-btn flat>this.heelp</v-btn>
+        <v-btn flat>teset</v-btn>
       </v-footer>
     </v-app>
   </div>
@@ -76,9 +77,9 @@
     name: 'App',
     data () {
       return {
-        locale: 'de',
         languageSlider: false,
         sideNav: false,
+        locale: 'de',
         language: [
           {icon: 'de', title: 'Deutsch'},
           {icon: 'us', title: 'English'},

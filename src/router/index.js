@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import News from '@/components/News'
+import home from '@/router/home'
+import news from '@/router/news'
+import impress from '@/router/impress'
 
 Vue.use(Router)
 
@@ -9,13 +10,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'home',
+      component: home
     },
     {
       path: '/news',
-      name: 'News',
-      component: News
+      name: 'news',
+      component: news
+    },
+    {
+      path: '/impress',
+      name: 'impress',
+      component: impress
     }
   ]
 })
