@@ -65,7 +65,7 @@
         <v-spacer></v-spacer>
         <v-btn flat v-lang.contact_us></v-btn>
         <h3>|</h3>
-        <v-btn flat v-lang.news></v-btn>
+        <v-btn flat v-lang.news .news></v-btn>
       </v-footer>
     </v-app>
   </div>
@@ -83,7 +83,22 @@
           {icon: 'us', title: 'English'},
           {icon: 'es', title: 'Español'},
           {icon: 'pl', title: 'Русский'}
-        ]
+        ],
+        message: {
+          default: 'de',
+          en: {
+            news: 'News',
+            welcome: 'Welcome, {name}',
+            contact_us: 'About Us',
+            change_lang: 'Change language'
+          },
+          de: {
+            news: 'Neuigkeiten',
+            welcome: 'Hallo, {name}',
+            contact_us: 'Impressum',
+            change_lang: 'Sprache auswählen'
+          }
+        }
       }
     }
   }
