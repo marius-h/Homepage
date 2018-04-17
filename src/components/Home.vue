@@ -1,9 +1,9 @@
 <template>
   <section>
     <v-carousel
-      hide-controls="true"
-      hide-delimiters="true"
-      light="true"
+      hide-controls
+      hide-delimiters
+      light
     >
       <v-carousel-item
         v-for="(item, i) in items"
