@@ -64,6 +64,7 @@
       </v-navigation-drawer>
 
       <v-toolbar
+        scroll-threshold="1800"
         dark
         color="primary"
         clipped-right

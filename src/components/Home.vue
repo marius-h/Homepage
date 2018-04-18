@@ -40,7 +40,6 @@
             dark
             color="primary"
             large
-            href="/wirkommenvorbei"
           >
             Vorstellungstermin vereinbaren
           </v-btn>
@@ -57,7 +56,7 @@
       >
         <v-flex xs12 sm4 class="my-3">
           <div class="text-xs-center">
-            <h2 class="headline">Die einfachste Möglichkeit zur Organisation von Elternsprechtagen</h2>
+            <h2 class="headline">Was macht unser System aus?</h2>
           </div>
         </v-flex>
         <v-flex xs9>
@@ -81,20 +80,24 @@
     </section>
 
     <section>
-      <v-carousel hide-controls :hide-delimiters=toggledeli interval="9000">
+      <v-carousel
+        hide-controls
+        :hide-delimiters=toggledeli
+        interval="9000"
+      >
         <v-carousel-item
           mouse-drag="false"
           transition="Slide"
           reverse-transition="Slide"
           v-for="(item,i) in items"
           :src="item.src"
-          :key="i"></v-carousel-item>
+          :key="i"
+        ></v-carousel-item>
       </v-carousel>
     </section>
 
     <section>
       <v-layout
-
         column
         wrap
         class="my-5"
@@ -103,27 +106,23 @@
         <v-flex xs12 sm4 class="my-3">
           <div class="text-xs-center">
             <h2 class="headline">UNSER TEAM</h2>
-            <span class="subheading">
-                maybe subheader?
-              </span>
           </div>
         </v-flex>
         <v-flex xs12>
           <v-container grid-list-xl>
             <v-layout row wrap align-center>
               <v-flex v-for="item in team" :key="item.id" xs12 md4>
-                <v-card class="elevation-0 transparent">
+                <v-card class="elevation-0 transparent ml-5 mr-5">
                   <v-card-text class="text-xs-center">
                     <v-avatar
                       :tile="tile"
                       :size="size"
                       class="grey lighten-4"
                     >
-
                       <img class="landscape" :src="`/static/` + item.avatar + `.png`">
-
                     </v-avatar>
                   </v-card-text>
+
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-xs-center">
                       <h2 class="headline">{{item.name}}</h2>
@@ -131,9 +130,15 @@
                         {{item.subhead}}
                       </h3>
                     </div>
-
                   </v-card-title>
-                  <v-card-text style="">{{ item.text}}</v-card-text>
+
+                  <div class="justify-center">
+                    <v-btn class="primary justify-center">
+                      <v-icon left>mail</v-icon>
+                      Kontaktieren
+                    </v-btn>
+                  </div>
+
                 </v-card>
               </v-flex>
             </v-layout>
@@ -153,18 +158,10 @@
         toggledeli: true,
         tile: false,
         size: '100px',
+        profile_width: '100px',
         items: [
           {
             src: '../static/Circle1TEST.png'
-          },
-          {
-            src: 'https://vuetifyjs.com/static/doc-images/carousel/sky.jpg'
-          },
-          {
-            src: 'https://vuetifyjs.com/static/doc-images/carousel/bird.jpg'
-          },
-          {
-            src: 'https://vuetifyjs.com/static/doc-images/carousel/planet.jpg'
           }
         ],
         shortdesc: [
@@ -194,13 +191,13 @@
             avatar: 'Marius',
             name: 'Marius Höfler',
             text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidun ut labore orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidun ue',
-            subhead: 'Android-Development'
+            subhead: 'Frontend-Development'
           },
           {
             avatar: 'laurin',
             name: 'Laurin Dörre',
             text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidun ut labore orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidun ue',
-            subhead: 'Web-Development'
+            subhead: 'Frontend-Development'
           },
           {
             avatar: 'luis',
