@@ -1,10 +1,6 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import MultiLanguage from 'vue-multilanguage'
-import language from '../lang/language'
 import {
   Vuetify,
   VApp,
@@ -23,6 +19,11 @@ import {
   VCard
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
+import i18n from '../lang/lang'
+import store from './store'
+//  import axios from 'axios'
+
+//  Vue.prototype.$http = axios.create({ baseURL: '/' })
 
 Vue.use(Vuetify, {
   components: {
@@ -43,7 +44,7 @@ Vue.use(Vuetify, {
   },
   theme: {
     primary: '#0D47A1',
-    secondary: '#0288d1',
+    secondary: '#BDBDBD',
     accent: '#5eb8ff',
     error: '#FF5252',
     info: '#2196F3',
@@ -52,13 +53,14 @@ Vue.use(Vuetify, {
   }
 })
 
-Vue.use(MultiLanguage, language)
-Vue.config.productionTip = false
-
 /* eslint-disable no-new */
-new Vue({
+export const app = new Vue({
   el: '#app',
+  i18n,
   router,
   components: { App },
   template: '<App/>'
 })
+
+window['vue'] = app
+window.store = store
