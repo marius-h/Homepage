@@ -19,6 +19,7 @@ import {
   VCard
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
+import VueCarousel from 'vue-carousel'
 import i18n from '../lang/lang'
 import store from './store'
 //  import axios from 'axios'
@@ -52,6 +53,8 @@ Vue.use(Vuetify, {
     warning: '#FFC107'
   }
 })
+
+Vue.use(VueCarousel)
 
 /* eslint-disable no-new */
 export const app = new Vue({

@@ -1,25 +1,4 @@
 <template>
-  <!--section>
-    <v-carousel
-      hide-controls
-      hide-delimiters
-      light
-    >
-      <v-carousel-item
-        v-for="(item, i) in items"
-        :src="'/static/screenshotApp1.png'"
-        :key="i"
-      >
-        <div class="title">
-          {{ item.title }}
-        </div>
-          <!--img
-            :src="'../static/screenshotApp1.png'"
-            style="-webkit-filter: blur(3px)" width="2000"/>
-      </v-carousel-item>
-    </v-carousel>
-  </section-->
-
   <v-content>
     <section>
       <v-parallax
@@ -57,19 +36,37 @@
       >
         <v-flex xs12 sm4 class="my-3">
           <div class="text-xs-center">
-            <h2 class="display-1 primary--text text--darken-1">Was macht unser System aus?</h2>
+            <h1 class="headline primary--text text--darken-1">Alle Funktionen. Einfach. An einem Ort.</h1>
           </div>
         </v-flex>
 
         <v-flex xs12 mb-5>
           <v-container grid-list-xl>
             <v-layout wrap>
-              <v-flex v-for="item in shortdesc" :key="item.id" xs12 sm6 md4>
-                <v-card flat color="transparent" style="height: auto;">
-                  <v-container fluid grid-list-lg>
+              <v-flex
+                v-for="item in shortdesc"
+                :key="item.id"
+                xs12
+                sm6
+                md4
+              >
+                <v-card
+                  flat
+                  color="transparent"
+                  style="height: auto;"
+                >
+                  <v-container
+                    fluid
+                    grid-list-lg
+                  >
                     <v-layout row>
-                      <v-flex xs2 class="text-xs-center">
-                        <v-icon x-large class="primary--text text-xs-center">{{item.icon}}</v-icon>
+                      <v-flex
+                        xs2
+                        class="text-xs-center">
+                        <v-icon
+                          x-large
+                          class="primary--text text-xs-center"
+                        >{{item.icon}}</v-icon>
                       </v-flex>
                       <v-flex>
                         <div class="subheading primary--text mb-3"><strong>{{item.headline}}</strong></div>
@@ -77,6 +74,16 @@
                       </v-flex>
                     </v-layout>
                   </v-container>
+                  <v-card-actions class="py-0">
+                    <v-spacer></v-spacer>
+                      <v-btn
+                        flat
+                        class="primary--text"
+                      >
+                        <div>Mehr erfahren</div>
+                        <v-icon right>arrow_forward</v-icon>
+                      </v-btn>
+                  </v-card-actions>
                 </v-card>
               </v-flex>
             </v-layout>
@@ -87,20 +94,31 @@
 
     <!-- VORSCHAU -->
     <section>
-      <v-carousel
-        class="elevation-0"
+
+      <overview-carousel></overview-carousel>
+
+      <!--v-carousel
+        light
+        class="elevation-1"
         hide-delimiters
       >
         <v-carousel-item
-          contain
           mouse-drag
           transition="fade"
           reverse-transition="fade"
           v-for="(item,i) in items"
-          :src="item.src"
           :key="i"
-        ></v-carousel-item>
-      </v-carousel>
+        >
+          <v-layout
+            column
+            wrap
+            align-center
+            class="my-3"
+          >
+            <img :src="item.src" style="height: 500px"/>
+          </v-layout>
+        </v-carousel-item>
+      </v-carousel-->
     </section>
 
     <!-- ÜBER UNS -->
@@ -120,7 +138,7 @@
           <v-container grid-list-xl>
             <v-layout wrap>
               <v-flex v-for="item in team" :key="item.id" xs12 md4>
-                <v-card class="elevation-0 transparent ml-5 mr-5" style="height: auto;">
+                <v-card class="elevation-0 transparent mx-5" style="height: auto;">
                   <v-card-text class="text-xs-center">
                     <v-avatar
                       :tile="tile"
@@ -164,8 +182,10 @@
 </template>
 
 <script>
+  import OverviewCarousel from './Carousel'
   export default {
     name: 'Home',
+    components: { OverviewCarousel },
     data () {
       return {
         tile: false,
@@ -173,14 +193,6 @@
         profile_width: '100px',
         // text
         // lists
-        items: [
-          {
-            src: '../static/team1.jpg'
-          },
-          {
-            src: '../static/screenshotApp1.png'
-          }
-        ],
         shortdesc: [
           {
             icon: 'color_lens',
@@ -189,16 +201,16 @@
             ' jeden Nutzer leicht verständlich sind und keine Einweisungen benötigen'
           },
           {
+            icon: 'view_compact',
+            headline: 'MODULAR',
+            text: 'Sie entscheiden, was Ihnen wichtig ist - durch ein modulares Konzept' +
+            ' können Schulen unnötig hohe Kosten erspart bleiben.'
+          },
+          {
             icon: 'language',
             headline: 'MEHRSPRACHIG',
             text: 'Die Anwendung wurde bereits in 4 Sprachen übersetzt – Deutsch,' +
             ' Englisch, Spanisch und Russisch'
-          },
-          {
-            icon: 'build',
-            headline: 'EINFACHE VERWALTUNG',
-            text: 'Die Anwendung verfügt über eine Admin-Oberfläche, über die das' +
-            ' gesamte System inklusive Datenbanken leicht verwaltet werden kann.'
           },
           {
             icon: 'grade',
@@ -213,6 +225,12 @@
             headline: 'SICHER',
             text: 'Alle Daten sind verschlüsselt und können somit nur mit selbst' +
             ' festgelegten Berechtigungen zugänglich gemacht werden.'
+          },
+          {
+            icon: 'build',
+            headline: 'EINFACHE VERWALTUNG',
+            text: 'Die Anwendung verfügt über eine Admin-Oberfläche, über die das' +
+            ' gesamte System inklusive Datenbanken leicht verwaltet werden kann.'
           }
         ],
         team: [

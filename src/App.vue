@@ -3,24 +3,56 @@
     <v-app>
       <v-navigation-drawer
         fixed
-        temporary
+        permanent
         :clipped="$vuetify.breakpoint.lgAndUp"
         app
         v-model="sideNav"
       >
         <v-list>
-          <v-list-tile>
+          <v-layout
+            column
+            wrap
+            align-center
+            class="my-3"
+          >
+            <img src="../static/Schule.svg" height="70px" style="width: auto"/>
+          </v-layout>
+
+          <v-list-group
+            v-model="item.active"
+            v-for="item in navItems"
+            :key="item.title"
+            :prepend-icon="item.action"
+            no-action
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            <v-list-tile v-for="subItem in item.items" :key="subItem.title" @click="">
+              <v-list-tile-content>
+                <v-list-tile-title>{{ subItem.page }}</v-list-tile-title>
+              </v-list-tile-content>
+              <v-list-tile-action>
+                <v-icon>{{ subItem.icon }}</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+
+          <!--v-list-tile>
             <v-list-tile-action>
               <v-icon>home</v-icon>
             </v-list-tile-action>
             <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile>
+
           <v-list-group
-            prepend-icon="account_circle"
+            prepend-icon="view_compact"
             value="true"
           >
             <v-list-tile slot="activator">
-              <v-list-tile-title>Users</v-list-tile-title>
+              <v-list-tile-title>Module</v-list-tile-title>
             </v-list-tile>
             <v-list-group
               sub-group
@@ -28,17 +60,19 @@
               value="true"
             >
               <v-list-tile slot="activator">
-                <v-list-tile-title>Admin</v-list-tile-title>
+                <v-list-tile-title>Terminverwaltung</v-list-tile-title>
               </v-list-tile>
               <v-list-tile
-                v-for="(admin, i) in admins"
+                v-for="(tile, i) in time_management"
                 :key="i"
                 @click=""
               >
-                <v-list-tile-title v-text="admin[0]"></v-list-tile-title>
                 <v-list-tile-action>
-                  <v-icon v-text="admin[1]"></v-icon>
+                  <v-icon left>{{tile.icon}}</v-icon>
                 </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{tile.page}}</v-list-tile-title>
+                </v-list-tile-content>
               </v-list-tile>
             </v-list-group>
             <v-list-group
@@ -59,11 +93,12 @@
                 </v-list-tile-action>
               </v-list-tile>
             </v-list-group>
-          </v-list-group>
+          </v-list-group-->
         </v-list>
       </v-navigation-drawer>
 
       <v-toolbar
+        app
         color="primary"
         dark
         :clipped-left="$vuetify.breakpoint.lgAndUp"
@@ -93,7 +128,7 @@
 
             </v-btn>
             <v-list>
-              <v-list-tile v-for="item in language" :key="item.icon" @click="setLang(item.icon)">
+              <v-list-tile v-for="item in language" :key="item.icon" @click="switchLang(item.icon)">
 
                 <v-list-tile-avatar tile size="32">
                   <img
@@ -110,10 +145,13 @@
       </v-toolbar>
 
       <main>
-        <router-view></router-view>
+        <transition name="fade" mode="out-in">
+          <router-view class="view"></router-view>
+        </transition>
       </main>
 
       <v-footer
+        inset
         height="auto"
         class="primary grey darken-1">
         <v-layout row wrap justify-center>
@@ -152,9 +190,23 @@
           { icon: 'es', title: 'Español' },
           { icon: 'ru', title: 'Русский' }
         ],
-        admins: [
-          ['Management', 'people_outline'],
-          ['Settings', 'settings']
+        navItems: [
+          {
+            title_icon: 'book',
+            title: 'Terminverwaltung',
+            items: [
+              { page: 'Stundenplan', icon: 'people_outline' },
+              { page: 'Vertretungsplan', icon: 'people_outline' },
+              { page: 'Kursbuch', icon: 'chrome_reader_mode' },
+              { page: 'Notenbuch', icon: 'book' },
+              { page: 'Elternsprechtag', icon: 'wc' },
+              { page: 'Versammlungen', icon: 'people_outline' },
+              { page: 'Klausuren', icon: 'people_outline' }
+            ]
+          }
+        ],
+        time_management: [
+
         ],
         cruds: [
           ['Create', 'add'],
@@ -215,6 +267,12 @@
           cb(error)
         })
       }
+    },
+    beforeRouteUpdate (to, from, next) {
+      const toDepth = to.path.split('/').length
+      const fromDepth = from.path.split('/').length
+      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+      next()
     }
   }
 </script>
