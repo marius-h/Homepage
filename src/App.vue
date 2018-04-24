@@ -3,7 +3,6 @@
     <v-app>
       <v-navigation-drawer
         fixed
-        permanent
         :clipped="$vuetify.breakpoint.lgAndUp"
         app
         v-model="sideNav"
@@ -31,12 +30,12 @@
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile v-for="subItem in item.items" :key="subItem.title" @click="">
-              <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.page }}</v-list-tile-title>
-              </v-list-tile-content>
               <v-list-tile-action>
                 <v-icon>{{ subItem.icon }}</v-icon>
               </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ $t(subItem.page) }}</v-list-tile-title>
+              </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
 
@@ -195,6 +194,19 @@
             title_icon: 'book',
             title: 'Terminverwaltung',
             items: [
+              { page: 'timetable', icon: 'people_outline' },
+              { page: 'Vertretungsplan', icon: 'people_outline' },
+              { page: 'Kursbuch', icon: 'chrome_reader_mode' },
+              { page: 'Notenbuch', icon: 'book' },
+              { page: 'Elternsprechtag', icon: 'wc' },
+              { page: 'Versammlungen', icon: 'people_outline' },
+              { page: 'Klausuren', icon: 'people_outline' }
+            ]
+          },
+          {
+            title_icon: 'book',
+            title: 'Terminverwaltung',
+            items: [
               { page: 'Stundenplan', icon: 'people_outline' },
               { page: 'Vertretungsplan', icon: 'people_outline' },
               { page: 'Kursbuch', icon: 'chrome_reader_mode' },
@@ -205,9 +217,7 @@
             ]
           }
         ],
-        time_management: [
-
-        ],
+        time_management: [],
         cruds: [
           ['Create', 'add'],
           ['Read', 'insert_drive_file'],

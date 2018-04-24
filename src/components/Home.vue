@@ -201,7 +201,7 @@
             ' jeden Nutzer leicht verständlich sind und keine Einweisungen benötigen'
           },
           {
-            icon: 'view_compact',
+            icon: 'widgets',
             headline: 'MODULAR',
             text: 'Sie entscheiden, was Ihnen wichtig ist - durch ein modulares Konzept' +
             ' können Schulen unnötig hohe Kosten erspart bleiben.'
