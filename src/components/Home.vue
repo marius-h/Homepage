@@ -215,8 +215,8 @@
           {
             icon: 'grade',
             headline: 'MEHRFACH AUSGEZEICHNET',
-            text: 'Die Anwendung wurde im Regionalwettbewerb bei Jugend forscht mit' +
-            ' dem 1. Platz im Bereich Mathematik/Informatik, sowie mit dem Preis' +
+            text: 'Die Anwendung wurde bei Jugend forscht mit' +
+            ' dem 1. Platz im Bereich Mathematik/ Informatik, sowie mit dem Preis' +
             ' "Anwendungsorientierte Arbeit" der IHK Darmstadt und IT FOR WORK ' +
             'ausgezeichnet.'
           },

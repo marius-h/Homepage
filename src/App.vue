@@ -109,7 +109,7 @@
             <img style="margin-top: 10px" src="/static/logo_small_white.svg" height="50"/>
           </router-link>
         </v-toolbar-title>
-        <v-toolbar-title style="width: 300px" class="ml-0 pl-3 align-center">
+        <v-toolbar-title class="ml-0 pl-3 align-center">
           <span class="hidden-sm-and-down align-baseline">Startseite</span>
         </v-toolbar-title>
 
@@ -194,26 +194,24 @@
             title_icon: 'book',
             title: 'Terminverwaltung',
             items: [
-              { page: 'timetable', icon: 'people_outline' },
-              { page: 'Vertretungsplan', icon: 'people_outline' },
+              { page: 'timetable', icon: 'access_time' },
+              { page: 'Vertretungsplan', icon: 'timelapse' },
               { page: 'Kursbuch', icon: 'chrome_reader_mode' },
               { page: 'Notenbuch', icon: 'book' },
               { page: 'Elternsprechtag', icon: 'wc' },
-              { page: 'Versammlungen', icon: 'people_outline' },
-              { page: 'Klausuren', icon: 'people_outline' }
+              { page: 'Versammlungen', icon: 'people' },
+              { page: 'Klausuren', icon: 'bookmark' }
             ]
           },
           {
             title_icon: 'book',
-            title: 'Terminverwaltung',
+            title: 'Raumverwaltung',
             items: [
-              { page: 'Stundenplan', icon: 'people_outline' },
-              { page: 'Vertretungsplan', icon: 'people_outline' },
-              { page: 'Kursbuch', icon: 'chrome_reader_mode' },
-              { page: 'Notenbuch', icon: 'book' },
-              { page: 'Elternsprechtag', icon: 'wc' },
-              { page: 'Versammlungen', icon: 'people_outline' },
-              { page: 'Klausuren', icon: 'people_outline' }
+              { page: 'Mensa', icon: 'local_pizza' },
+              { page: 'Konferrenzraum', icon: 'supervisor_account' },
+              { page: 'Aula', icon: 'highlight' },
+              { page: 'Bibliothek', icon: 'local_library' },
+              { page: 'Türschilder', icon: 'assignment_late' }
             ]
           }
         ],

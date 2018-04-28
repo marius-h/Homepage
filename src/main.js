@@ -19,7 +19,8 @@ import {
   VCard
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
-import VueCarousel from 'vue-carousel'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueAgile from 'vue-agile'
 import i18n from '../lang/lang'
 import store from './store'
 //  import axios from 'axios'
@@ -54,7 +55,7 @@ Vue.use(Vuetify, {
   }
 })
 
-Vue.use(VueCarousel)
+Vue.use(VueAgile)
 
 /* eslint-disable no-new */
 export const app = new Vue({
