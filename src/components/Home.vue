@@ -97,28 +97,6 @@
 
       <overview-carousel></overview-carousel>
 
-      <!--v-carousel
-        light
-        class="elevation-1"
-        hide-delimiters
-      >
-        <v-carousel-item
-          mouse-drag
-          transition="fade"
-          reverse-transition="fade"
-          v-for="(item,i) in items"
-          :key="i"
-        >
-          <v-layout
-            column
-            wrap
-            align-center
-            class="my-3"
-          >
-            <img :src="item.src" style="height: 500px"/>
-          </v-layout>
-        </v-carousel-item>
-      </v-carousel-->
     </section>
 
     <!-- ÜBER UNS -->

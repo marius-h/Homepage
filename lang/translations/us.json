@@ -2,5 +2,16 @@
   "contact_us": "Hello",
   "world": "World",
   "contact": "Contact us",
-  "timetable": "Timetable"
+  "timetable": "Timetable",
+  "substitution_table": "substitution table",
+  "schedule": "schedule",
+  "marks": "marks",
+  "parent-teacher_meeting": "parent-teacher meeting",
+  "meetings": "meetings",
+  "exam": "exams",
+  "canteen": "canteen",
+  "conference_room": "conference room",
+  "auditorium": "auditorium",
+  "library": "library",
+  "doorplate": "doorplate"
 }

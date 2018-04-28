@@ -1,5 +1,16 @@
 {
   "world": "Welt",
   "contact": "Kontakt aufnehmen",
-  "timetable": "Stundenplan"
+  "timetable": "Stundenplan",
+  "substitution_table": "Vertretungsplan",
+  "schedule": "Kursbuch",
+  "marks": "Notenbuch",
+  "parent-teacher_meeting": "Elternsprechtag",
+  "meetings": "Versammlungen",
+  "exam": "Klausuren",
+  "canteen": "Mensa",
+  "conference_room": "Konferenzraum",
+  "auditorium": "Aula",
+  "library": "Bibliothek",
+  "doorplate": "Türschilder"
 }

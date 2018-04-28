@@ -38,61 +38,6 @@
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
-
-          <!--v-list-tile>
-            <v-list-tile-action>
-              <v-icon>home</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile>
-
-          <v-list-group
-            prepend-icon="view_compact"
-            value="true"
-          >
-            <v-list-tile slot="activator">
-              <v-list-tile-title>Module</v-list-tile-title>
-            </v-list-tile>
-            <v-list-group
-              sub-group
-              no-action
-              value="true"
-            >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Terminverwaltung</v-list-tile-title>
-              </v-list-tile>
-              <v-list-tile
-                v-for="(tile, i) in time_management"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-action>
-                  <v-icon left>{{tile.icon}}</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                  <v-list-tile-title>{{tile.page}}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list-group>
-            <v-list-group
-              sub-group
-              no-action
-            >
-              <v-list-tile slot="activator">
-                <v-list-tile-title>Actions</v-list-tile-title>
-              </v-list-tile>
-              <v-list-tile
-                v-for="(crud, i) in cruds"
-                :key="i"
-                @click=""
-              >
-                <v-list-tile-title v-text="crud[0]"></v-list-tile-title>
-                <v-list-tile-action>
-                  <v-icon v-text="crud[1]"></v-icon>
-                </v-list-tile-action>
-              </v-list-tile>
-            </v-list-group>
-          </v-list-group-->
         </v-list>
       </v-navigation-drawer>
 
@@ -114,10 +59,11 @@
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
-
+        <v-btn flat>Kontakt</v-btn>
         <!-- class="hidden-xs-only" -->
         <v-toolbar-items>
           <v-menu offset-y>
+
             <v-btn
               flat
               slot="activator"
@@ -195,23 +141,23 @@
             title: 'Terminverwaltung',
             items: [
               { page: 'timetable', icon: 'access_time' },
-              { page: 'Vertretungsplan', icon: 'timelapse' },
-              { page: 'Kursbuch', icon: 'chrome_reader_mode' },
-              { page: 'Notenbuch', icon: 'book' },
-              { page: 'Elternsprechtag', icon: 'wc' },
-              { page: 'Versammlungen', icon: 'people' },
-              { page: 'Klausuren', icon: 'bookmark' }
+              { page: 'substitution_table', icon: 'timelapse' },
+              { page: 'schedule', icon: 'chrome_reader_mode' },
+              { page: 'marks', icon: 'book' },
+              { page: 'parent-teacher_meeting', icon: 'wc' },
+              { page: 'meetings', icon: 'people' },
+              { page: 'exam', icon: 'bookmark' }
             ]
           },
           {
             title_icon: 'book',
             title: 'Raumverwaltung',
             items: [
-              { page: 'Mensa', icon: 'local_pizza' },
-              { page: 'Konferrenzraum', icon: 'supervisor_account' },
-              { page: 'Aula', icon: 'highlight' },
-              { page: 'Bibliothek', icon: 'local_library' },
-              { page: 'Türschilder', icon: 'assignment_late' }
+              { page: 'canteen', icon: 'local_pizza' },
+              { page: 'conference_room', icon: 'supervisor_account' },
+              { page: 'auditorium', icon: 'highlight' },
+              { page: 'library', icon: 'local_library' },
+              { page: 'doorplate', icon: 'assignment_late' }
             ]
           }
         ],

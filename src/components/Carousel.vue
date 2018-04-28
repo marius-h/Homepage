@@ -1,31 +1,27 @@
 <template>
-  <!-- swiper -->
-  <agile
-    :arrows="false"
-    :dots="true"
-    autoplay="true"
+  <v-carousel
+    light
+    class="elevation-1"
+    hide-delimiters
   >
-    <div class="slide-1"></div>
-    <div class="slide-2"></div>
-  </agile>
-
-  <!--carousel
-    autoplay
-    autoplay-timeout="5000"
-    per-page="3"
-    pagination-enabled
-    pagination-active-color="#0D47A1"
-  >
-    <slide
-      v-for="(slide, i) in items"
+    <v-parallax>
+    <v-carousel-item
+      mouse-drag
+      transition="fade"
+      reverse-transition="fade"
+      v-for="(item,i) in items"
       :key="i"
     >
-      <img
-        style="height: 400px"
-        :src="slide.src"
-      />
-    </slide>
-  </carousel-->
+      <v-layout
+        column
+        wrap
+        align-center
+      >
+        <img :src="item.src" style="max-height: 500px"/>
+      </v-layout>
+    </v-carousel-item>
+    </v-parallax>
+  </v-carousel>
 </template>
 
 <script>
@@ -46,36 +42,6 @@
 </script>
 
 <style scoped>
-  .slide {
-    color: #fff;
-    height: 300px;
-    position: relative;
-  }
-  .slide-1 {
-    background-size: cover;
-    background: url('/static/carousel/team1.jpg') center;
-  }
-
-  .slide-2 {
-    background-size: cover;
-    background: url('/static/carousel/team2.jpg') center;
-  }
-
-  .slide-3 {
-    background-size: cover;
-    background: url('/static/carousel/tablet_team.jpg') center;
-  }
-
-  .slide-4 {
-    background-size: cover;
-    background: url('/static/carousel/tablet1.jpg') center;
-  }
-
-  .slide-5 {
-    background-size: cover;
-    background: url('/static/carousel/screenshotApp1.png') center;
-  }
-
   h3 {
     font-size: 32px;
     font-weight: 300;
