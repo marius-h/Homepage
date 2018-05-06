@@ -16,10 +16,15 @@ import {
   VAvatar,
   VCarousel,
   VParallax,
-  VCard
+  VCard,
+  VTextField,
+  VForm,
+  VJumbotron,
+  VSelect
 } from 'vuetify'
 import '../node_modules/vuetify/src/stylus/app.styl'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueHead from 'vue-head'
 //  import VueAgile from 'vue-agile'
 import i18n from '../lang/lang'
 import store from './store'
@@ -42,7 +47,11 @@ Vue.use(Vuetify, {
     VAvatar,
     VCarousel,
     VParallax,
-    VCard
+    VCard,
+    VTextField,
+    VForm,
+    VJumbotron,
+    VSelect
   },
   theme: {
     primary: '#0D47A1',
@@ -56,6 +65,10 @@ Vue.use(Vuetify, {
 })
 
 Vue.use(VueAwesomeSwiper)
+
+Vue.use(VueHead, {
+  complement: 'EinfachPunkt'
+})
 
 /* eslint-disable no-new */
 export const app = new Vue({
