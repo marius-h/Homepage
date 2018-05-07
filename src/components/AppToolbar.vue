@@ -3,11 +3,13 @@
     app
     color="primary"
     dark
-    class="elevation-0"
+    class="elevation-0 #app-toolbar"
+    height="58px"
+    ref="toolbar"
   >
     <v-toolbar-title class="ml-2">
       <router-link to="/" tag="span" style="cursor: pointer">
-        <img style="margin-top: 10px" src="/static/logo_small_white.svg" height="50"/>
+        <img style="margin-top: 10px" src="/static/logo_small_white.svg" height="38px"/>
       </router-link>
     </v-toolbar-title>
     <v-toolbar-title class="ml-1 align-center">
@@ -70,6 +72,7 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   import i18n from '../../lang/lang'
 
   export default {
@@ -123,6 +126,14 @@
         ]
       }
     },
+    computed: {
+      isHome () {
+        return this.route.name === 'home'
+      },
+      isManualScrolled () {
+        return !this.isHome && this.isFullscreen
+      }
+    },
     props: {
       flag: {
         type: String,
@@ -131,44 +142,59 @@
     },
     methods: {
       switchLang: function (lang) {
-        this.flag = lang.toString()
+        this.flag = lang.toString ()
         if (lang in i18n.messages) {
-          console.log('no ajax')
+          console.log ('no ajax')
           this.$i18n.locale = lang
         } else {
-          this.loadLocaleMessage(lang, (err, message) => {
+          this.loadLocaleMessage (lang, (err, message) => {
             if (err) {
-              console.error(err)
+              console.error (err)
               return
             }
-            i18n.setLocaleMessage(lang, message)
+            i18n.setLocaleMessage (lang, message)
             this.$i18n.locale = lang
           })
         }
       },
       loadLocaleMessage: function (locale, cb) {
-        console.log('locale', locale)
-        return fetch(`../../lang/translations/${locale}.json`, {
+        console.log ('locale', locale)
+        return fetch (`../../lang/translations/${locale}.json`, {
           method: 'get',
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           }
-        }).then((res) => {
-          console.log('success')
-          return res.json()
-        }).then((json) => {
-          if (Object.keys(json).length === 0) {
-            return Promise.reject(new Error('locale empty !!'))
+        }).then ((res) => {
+          console.log ('success')
+          return res.json ()
+        }).then ((json) => {
+          if (Object.keys (json).length === 0) {
+            return Promise.reject (new Error ('locale empty !!'))
           } else {
-            return Promise.resolve(json)
+            return Promise.resolve (json)
           }
-        }).then((message) => {
-          cb(null, message)
-        }).catch((error) => {
-          cb(error)
+        }).then ((message) => {
+          cb (null, message)
+        }).catch ((error) => {
+          cb (error)
         })
       }
     }
   }
 </script>
+
+<style lang="stylus">
+  #app-toolbar
+    .toolbar__title
+      margin-left .5em
+      font-weight 300
+      font-size 21px
+      position relative
+      top 1px
+    .toolbar__items
+      .btn
+        text-transform capitalize
+        font-size 16px
+        font-weight 300
+</style>

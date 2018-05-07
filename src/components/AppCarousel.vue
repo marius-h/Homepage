@@ -5,7 +5,6 @@
     height="auto"
   >
     <v-carousel
-      light
       class="elevation-0"
       hide-delimiters
     >
